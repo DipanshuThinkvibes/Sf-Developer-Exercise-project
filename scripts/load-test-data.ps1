@@ -116,9 +116,12 @@ $lines.Add("")
 $lines.Add("System.debug('Loaded ' + $($data.employers.Count) + ' employers, ' + $($data.consultants.Count) + ' consultants, ' + $($data.positions.Count) + ' positions and ' + $($data.hirings.Count) + ' hirings.');")
 
 $apexFile = Join-Path $PSScriptRoot '.generated-test-data.apex'
-Set-Content -LiteralPath $apexFile -Value ($lines -join "`r`n") -Encoding ASCII
+$apexNamedFile = Join-Path $PSScriptRoot 'apex\load-test-data.apex'
+$fileContent = $lines -join "`r`n"
+Set-Content -LiteralPath $apexFile -Value $fileContent -Encoding ASCII
+Set-Content -LiteralPath $apexNamedFile -Value $fileContent -Encoding ASCII
 
-Write-Host "Generated $apexFile"
+Write-Host "Generated $apexFile and $apexNamedFile"
 & sf apex run --file $apexFile --target-org $OrgAlias
 if ($LASTEXITCODE -ne 0) {
     throw "Test data load failed with exit code $LASTEXITCODE"
