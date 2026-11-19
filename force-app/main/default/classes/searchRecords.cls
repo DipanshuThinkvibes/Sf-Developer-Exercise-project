@@ -1,5 +1,10 @@
 public with sharing class searchRecords {
-  public static void searchRecords() {
+  public static void searchRecords(String keyword) {
+    if(String.isBlank(keyword) && String.isEmpty(keyword) && keyword == null) {
+        System.debug('Search keyword is empty or null.');
+        return;
+    }
+    String searchTerm = keyword.trim() + '*';
         List<List<SObject>> searchResults = [
             FIND 'John' IN ALL FIELDS
             RETURNING
@@ -15,7 +20,11 @@ public with sharing class searchRecords {
 
     }
     public static void  searchMalePeople(String searchKey) {
-        String searchTerm = searchKey + '*';
+           if(String.isBlank(searchKey) && String.isEmpty(searchKey) && searchKey == null) {
+        System.debug('Search keyword is empty or null.');
+        return;
+    }
+        String searchTerm = searchKey.trim() + '*';
         List<List<SObject>> results = [
             FIND :searchTerm IN ALL FIELDS
             RETURNING
@@ -24,7 +33,8 @@ public with sharing class searchRecords {
                     WHERE Gender__c = 'Male'
                 ),
                 Contact(
-                    Id, Name
+                    Id, Name,GenderIdentity
+                    WHERE GenderIdentity = 'Male'
                 )
         ];
 
@@ -35,10 +45,14 @@ public with sharing class searchRecords {
         }
 
     }
-     public static void  findApexPositions() {
-
+     public static void  findApexPositions(String keyword) {
+           if(String.isBlank(keyword) && String.isEmpty(keyword) && keyword == null) {
+        System.debug('Search keyword is empty or null.');
+        return;
+    }
+    String searchTerm = keyword.trim() + '*';
         List<List<SObject>> results = [
-            FIND 'Apex'
+            FIND :searchTerm
             IN ALL FIELDS
             RETURNING Position__c(
                 Id,

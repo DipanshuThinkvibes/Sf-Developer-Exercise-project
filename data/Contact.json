@@ -1,0 +1,45 @@
+{
+    "records":[
+  {
+    "attributes": {
+      "type": "Contact",
+      "referenceId": "MeeraIyer"
+    },
+    "FirstName": "Meera",
+    "LastName": "Iyer",
+    "Email": "meera.iyer@northwind.example.com",
+    "AccountId": "@NorthwindLabs"
+  },
+  {
+    "attributes": {
+      "type": "Contact",
+      "referenceId": "OmPatel"
+    },
+    "FirstName": "Om",
+    "LastName": "Patel",
+    "Email": "om.patel@cedarhealth.example.com",
+    "AccountId": "@CedarHealth"
+  },
+  {
+    "attributes": {
+      "type": "Contact",
+      "referenceId": "SanaQureshi"
+    },
+    "FirstName": "Sana",
+    "LastName": "Qureshi",
+    "Email": "sana.qureshi@brightpath.example.com",
+    "AccountId": "@BrightPathAcademy"
+  },
+  {
+    "attributes": {
+      "type": "Contact",
+      "referenceId": "VikramRao"
+    },
+    "FirstName": "Vikram",
+    "LastName": "Rao",
+    "Email": "vikram.rao@harborline.example.com",
+    "AccountId": "@HarborlineBank"
+  }
+]
+
+}

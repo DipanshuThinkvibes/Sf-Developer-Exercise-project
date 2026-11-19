@@ -1,0 +1,36 @@
+{
+    "records":[
+  {
+    "attributes": {
+      "type": "Account",
+      "referenceId": "NorthwindLabs"
+    },
+    "Name": "Northwind Labs",
+    "Domain__c": "IT"
+  },
+  {
+    "attributes": {
+      "type": "Account",
+      "referenceId": "CedarHealth"
+    },
+    "Name": "Cedar Health",
+    "Domain__c": "Healthcare"
+  },
+  {
+    "attributes": {
+      "type": "Account",
+      "referenceId": "BrightPathAcademy"
+    },
+    "Name": "BrightPath Academy",
+    "Domain__c": "Education"
+  },
+  {
+    "attributes": {
+      "type": "Account",
+      "referenceId": "HarborlineBank"
+    },
+    "Name": "Harborline Bank",
+    "Domain__c": "Finance"
+  }
+]
+}

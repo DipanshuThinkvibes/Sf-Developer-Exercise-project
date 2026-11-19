@@ -1,0 +1,78 @@
+{
+    "records":
+[
+  {
+    "attributes": {
+      "type": "Position__c",
+      "referenceId": "PlatformEngineer"
+    },
+    "Name": "Platform Engineer",
+    "Employer__c": "@NorthwindLabs",
+    "Openings__c": 4,
+    "Status__c": "Open",
+    "Hourly_Rate__c": 52,
+    "Description__c": "Build and operate the internal delivery platform."
+  },
+  {
+    "attributes": {
+      "type": "Position__c",
+      "referenceId": "QAAnalyst"
+    },
+    "Name": "QA Analyst",
+    "Employer__c": "@NorthwindLabs",
+    "Openings__c": 2,
+    "Status__c": "Open",
+    "Hourly_Rate__c": 32,
+    "Description__c": "Validate releases across the product suite."
+  },
+  {
+    "attributes": {
+      "type": "Position__c",
+      "referenceId": "StaffNurse"
+    },
+    "Name": "Staff Nurse",
+    "Employer__c": "@CedarHealth",
+    "Openings__c": 5,
+    "Status__c": "Open",
+    "Hourly_Rate__c": 44,
+    "Description__c": "Deliver bedside care in the acute unit."
+  },
+  {
+    "attributes": {
+      "type": "Position__c",
+      "referenceId": "PatientScheduler"
+    },
+    "Name": "Patient Scheduler",
+    "Employer__c": "@CedarHealth",
+    "Openings__c": 1,
+    "Status__c": "Filled",
+    "Hourly_Rate__c": 24,
+    "Description__c": "Manage appointments and follow-up visits."
+  },
+  {
+    "attributes": {
+      "type": "Position__c",
+      "referenceId": "ScienceTeacher"
+    },
+    "Name": "Science Teacher",
+    "Employer__c": "@BrightPathAcademy",
+    "Openings__c": 3,
+    "Status__c": "Open",
+    "Hourly_Rate__c": 29,
+    "Description__c": "Teach physics and chemistry to secondary classes."
+  },
+  {
+    "attributes": {
+      "type": "Position__c",
+      "referenceId": "RiskAnalyst"
+    },
+    "Name": "Risk Analyst",
+    "Employer__c": "@HarborlineBank",
+    "Openings__c": 2,
+    "Status__c": "Closed",
+    "Hourly_Rate__c": 41,
+    "Description__c": "Assess credit and operational risk exposure."
+  }
+]
+
+}

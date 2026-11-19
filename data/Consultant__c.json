@@ -1,0 +1,106 @@
+{
+    "records":
+[
+  {
+    "attributes": {"type": "Consultant__c", "referenceId": "AishaKhan"},
+    "First_Name__c": "Aisha",
+    "Last_Name__c": "Khan",
+    "DOB__c": "1987-02-11",
+    "Gender__c": "Female",
+    "Email__c": "aisha.khan@example.com",
+    "Married__c": true,
+    "Education__c": "MCA"
+  },
+  {
+    "attributes": {"type": "Consultant__c", "referenceId": "RohanDesai"},
+    "First_Name__c": "Rohan",
+    "Last_Name__c": "Desai",
+    "DOB__c": "1991-04-09",
+    "Gender__c": "Male",
+    "Email__c": "rohan.desai@example.com",
+    "Married__c": false,
+    "Education__c": "BE"
+  },
+  {
+    "attributes": {"type": "Consultant__c", "referenceId": "SnehaKulkarni"},
+    "First_Name__c": "Sneha",
+    "Last_Name__c": "Kulkarni",
+    "DOB__c": "1993-06-18",
+    "Gender__c": "Female",
+    "Email__c": "sneha.kulkarni@example.com",
+    "Married__c": true,
+    "Education__c": "BTech"
+  },
+  {
+    "attributes": {"type": "Consultant__c", "referenceId": "TaraMehta"},
+    "First_Name__c": "Tara",
+    "Last_Name__c": "Mehta",
+    "DOB__c": "1996-08-27",
+    "Gender__c": "Female",
+    "Email__c": "tara.mehta@example.com",
+    "Married__c": false,
+    "Education__c": "MTech"
+  },
+  {
+    "attributes": {"type": "Consultant__c", "referenceId": "ArjunNair"},
+    "First_Name__c": "Arjun",
+    "Last_Name__c": "Nair",
+    "DOB__c": "1984-12-03",
+    "Gender__c": "Male",
+    "Email__c": "arjun.nair@example.com",
+    "Married__c": true,
+    "Education__c": "BTech"
+  },
+  {
+    "attributes": {"type": "Consultant__c", "referenceId": "PriyaRaman"},
+    "First_Name__c": "Priya",
+    "Last_Name__c": "Raman",
+    "DOB__c": "1999-03-14",
+    "Gender__c": "Female",
+    "Email__c": "priya.raman@example.com",
+    "Married__c": false,
+    "Education__c": "MCA"
+  },
+  {
+    "attributes": {"type": "Consultant__c", "referenceId": "KabirSethi"},
+    "First_Name__c": "Kabir",
+    "Last_Name__c": "Sethi",
+    "DOB__c": "1992-10-21",
+    "Gender__c": "Male",
+    "Email__c": "kabir.sethi@example.com",
+    "Married__c": false,
+    "Education__c": "BE"
+  },
+  {
+    "attributes": {"type": "Consultant__c", "referenceId": "NehaSawant"},
+    "First_Name__c": "Neha",
+    "Last_Name__c": "Sawant",
+    "DOB__c": "1994-01-07",
+    "Gender__c": "Female",
+    "Email__c": "neha.sawant@example.com",
+    "Married__c": false,
+    "Education__c": "MTech"
+  },
+  {
+    "attributes": {"type": "Consultant__c", "referenceId": "OmSharma"},
+    "First_Name__c": "Om",
+    "Last_Name__c": "Sharma",
+    "DOB__c": "1989-07-30",
+    "Gender__c": "Male",
+    "Email__c": "om.sharma@example.com",
+    "Married__c": true,
+    "Education__c": "BTech"
+  },
+  {
+    "attributes": {"type": "Consultant__c", "referenceId": "DiyaIyer"},
+    "First_Name__c": "Diya",
+    "Last_Name__c": "Iyer",
+    "DOB__c": "1997-11-19",
+    "Gender__c": "Female",
+    "Email__c": "diya.iyer@example.com",
+    "Married__c": false,
+    "Education__c": "MCA"
+  }
+]
+
+}

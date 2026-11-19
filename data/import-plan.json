@@ -1,0 +1,32 @@
+[
+  {
+    "sobject": "Account",
+    "saveRefs": true,
+    "resolveRefs":false,
+    "files": ["Account.json"]
+  },
+  {
+    "sobject": "Contact",
+    "saveRefs": true,
+    "resolveRefs":false,
+    "files": ["Contact.json"]
+  },
+  {
+    "sobject": "Consultant__c",
+    "saveRefs": true,
+    "resolveRefs":false,
+    "files": ["Consultant__c.json"]
+  },
+  {
+    "sobject": "Position__c",
+    "saveRefs": true,
+    "resolveRefs":false,
+    "files": ["Position__c.json"]
+  },
+  {
+    "sobject": "Hiring__c",
+    "saveRefs": true,
+    "resolveRefs":false,
+    "files": ["Hiring__c.json"]
+  }
+]
