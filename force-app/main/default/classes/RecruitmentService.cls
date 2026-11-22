@@ -4,7 +4,8 @@ public with sharing class RecruitmentService {
     private static Map<String, List<String>> cachedOrgObjects;
     //Get Consultant Name for a given Null parameter
     public static List<String> getConsultantNames(){
-        return getConsultantNames(null);
+        throw new RecruitmentServiceException('Consultant names cannot be retrieved for a null employer ID.');
+      
     }
     //Get Consultant Names for a given Employer Ids
     public static List<String> getConsultantNames(Id employerId) {
@@ -24,7 +25,8 @@ public with sharing class RecruitmentService {
     }
     //Get Consultant BY Employer for Null Parameter
     public static Map<Id, Set<Id>> getConsultantsByEmployer() {
-        return getConsultantsByEmployer(null);
+          throw new RecruitmentServiceException('Employer IDs cannot be null.');
+        
     }
     //Get Consultant BY Employer for employer IDs
     public static Map<Id, Set<Id>> getConsultantsByEmployer(Set<Id> employerIds) {
