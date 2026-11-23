@@ -210,26 +210,44 @@ private class RecruitmentServiceTest {
 
     @IsTest
     static void testGetConsultantsByEmployerWithoutParameter() {
+    Account employer1 = createEmployer('Employer 1');
+    Account employer2 = createEmployer('Employer 2');
 
-        Boolean exceptionThrown = false;
+    Consultant__c consultant1 = createConsultant('Rahul', 'Sharma');
+    Consultant__c consultant2 = createConsultant('Neha', 'Gupta');
+    Consultant__c consultant3 = createConsultant('Amit', 'Verma');
+
+    createHiring(employer1.Id, consultant1.Id);
+    createHiring(employer1.Id, consultant2.Id);
+    createHiring(employer2.Id, consultant3.Id);
+   
 
         Test.startTest();
 
-        try {
-            RecruitmentService.getConsultantsByEmployer();
-        } catch (
-            RecruitmentService.RecruitmentServiceException e
-        ) {
-            exceptionThrown = true;
-        }
+    
+              Map<Id, Set<Id>> result = RecruitmentService.getConsultantsByEmployer();
+         
 
         Test.stopTest();
+        
 
-        System.assertEquals(
-            true,
-            exceptionThrown,
-            'Calling without Employer IDs should throw an exception.'
-        );
+        System.assertEquals(2, result.size());
+
+    System.assertEquals(2, result.get(employer1.Id).size());
+
+    System.assertEquals(1, result.get(employer2.Id).size());
+
+    System.assert(
+        result.get(employer1.Id).contains(consultant1.Id)
+    );
+
+    System.assert(
+        result.get(employer1.Id).contains(consultant2.Id)
+    );
+
+    System.assert(
+        result.get(employer2.Id).contains(consultant3.Id)
+    );
     }
 
 
