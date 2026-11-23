@@ -5,6 +5,7 @@ trigger OrderTrigger on Order (before insert, before update, before delete, afte
             OrderShippingService.updateAssetStatus(Trigger.new, Trigger.oldMap);
             ContactDripCampaignService.updateContactDripCampaigns(Trigger.new, Trigger.oldMap);
             OrderShippingEmailService.sendShippingEmail(Trigger.new, Trigger.oldMap);
+            OrderShippingToCustomerUserService.createOrderShippingToCustomerUser(Trigger.new, Trigger.oldMap);
         }
     }
 
