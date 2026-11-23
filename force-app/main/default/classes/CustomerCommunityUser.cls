@@ -61,5 +61,14 @@ public with sharing class CustomerCommunityUser implements Queueable {
         if (!usersToInsert.isEmpty()) {
             insert usersToInsert;
         }
+    // Send password reset email to newly created users
+    for (User newUser : usersToInsert) {
+
+        System.resetPasswordWithEmailTemplate(
+            newUser.Id,
+            true,
+            'Employer_Portal_Password_Reset'
+        );
+    }
     }
 }
