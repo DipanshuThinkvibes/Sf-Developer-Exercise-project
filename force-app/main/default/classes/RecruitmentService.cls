@@ -24,12 +24,13 @@ public with sharing class RecruitmentService {
     }
     //Get Consultant BY Employer for Null Parameter
     public static Map<Id, Set<Id>> getConsultantsByEmployer() {
-        Map<Id, Set<Id>> result = new Map<Id, Set<Id>>();
+       Map<Id, Set<Id>> result = new Map<Id, Set<Id>>();
+      
         for (Hiring__c h : [SELECT Employer__c, Consultant__c FROM Hiring__c WHERE Consultant__c != null AND Employer__c != null]) {
             if (!result.containsKey(h.Employer__c)) {
                 result.put(h.Employer__c, new Set<Id>());
             }
-            result.put(h.Employer__c, result.get(h.Employer__c));
+            
             result.get(h.Employer__c).add(h.Consultant__c);
         }
         return result;
