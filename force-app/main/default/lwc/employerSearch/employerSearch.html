@@ -1,0 +1,158 @@
+
+<template>
+    <lightning-card title="Employer Search" icon-name="standard:account">
+
+        <div class="slds-p-around_medium">
+
+            <!-- Search Filters -->
+            <div class="slds-grid slds-wrap slds-gutters">
+
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input
+                        label="Employer Name"
+                        value={employerName}
+                        onchange={handleNameChange}>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-combobox
+                        label="Domain"
+                        value={domain}
+                        options={domainOptions}
+                        placeholder="Select Domain"
+                        onchange={handleDomainChange}>
+                    </lightning-combobox>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input
+                        label="Industry"
+                        value={industry}
+                        onchange={handleIndustryChange}>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-input
+                        label="Billing City"
+                        value={billingCity}
+                        onchange={handleCityChange}>
+                    </lightning-input>
+                </div>
+
+            </div>
+
+           
+            <!-- Search and Reset Buttons -->
+            <div class="slds-m-top_medium slds-align_absolute-center">
+
+                <lightning-button
+                    label="Search"
+                    variant="brand"
+                    onclick={handleSearch}
+                    disabled={isLoading}>
+                </lightning-button>
+
+                <lightning-button
+                    label="Reset"
+                    variant="neutral"
+                    onclick={handleReset}
+                    disabled={isLoading}
+                    class="slds-m-left_small">
+                </lightning-button>
+
+            </div>
+
+
+            <!-- Results -->
+            <div class="slds-m-top_large">
+
+                <div class="slds-grid slds-grid_align-spread slds-m-bottom_small">
+
+                    <p class="slds-text-heading_small">
+                        Employer Results
+                    </p>
+
+                    <p>{recordInformation}</p>
+
+                </div>
+
+                <!-- Loading Spinner -->
+                <template if:true={isLoading}>
+                    <lightning-spinner
+                        alternative-text="Loading employers"
+                        size="medium">
+                    </lightning-spinner>
+                </template>
+
+                <!-- Data Table -->
+                <lightning-datatable
+                    key-field="Id"
+                    data={employers}
+                    columns={columns}
+                    onsort={handleSort}
+                    sorted-by={sortField}
+                    sorted-direction={sortDirection}
+                    hide-checkbox-column>
+                </lightning-datatable>
+
+                <!-- Empty State -->
+                <template if:false={isLoading}>
+                    <template if:false={hasEmployers}>
+                        <div class="slds-align_absolute-center slds-p-around_medium">
+                            No employers found.
+                        </div>
+                    </template>
+                </template>
+
+                <!-- Pagination -->
+                <div class="slds-m-top_medium">
+
+                    <div class="slds-grid slds-grid_align-spread slds-wrap">
+
+                        <div class="slds-text-body_small slds-align_absolute-center">
+                            {pageInformation}
+                        </div>
+
+                        <div>
+
+                            <lightning-button
+                                label="First"
+                                onclick={handleFirst}
+                                disabled={isFirstPage}
+                                class="slds-m-right_x-small">
+                            </lightning-button>
+
+                            <lightning-button
+                                label="Previous"
+                                onclick={handlePrevious}
+                                disabled={isFirstPage}
+                                class="slds-m-right_x-small">
+                            </lightning-button>
+
+                            <lightning-button
+                                label="Next"
+                                onclick={handleNext}
+                                disabled={isLastPage}
+                                class="slds-m-right_x-small">
+                            </lightning-button>
+
+                            <lightning-button
+                                label="Last"
+                                onclick={handleLast}
+                                disabled={isLastPage}>
+                            </lightning-button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </lightning-card>
+</template>
