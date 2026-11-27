@@ -123,27 +123,18 @@ export default class EmployerSearch extends LightningElement {
 
     handleReset() {
 
+        // Clear all filter fields
         this.employerName = '';
         this.domain = '';
         this.industry = '';
         this.billingCity = '';
 
+        // Reset pagination
+        this.currentPage = 1;
+
+        // Fetch all employer records again
         this.fetchEmployers();
     }
-handleReset() {
-
-    // Clear all filter fields
-    this.employerName = '';
-    this.domain = '';
-    this.industry = '';
-    this.billingCity = '';
-
-    // Reset pagination
-    this.currentPage = 1;
-
-    // Fetch all employer records again
-    this.fetchEmployers();
-}
     // Sorting
 
     handleSort(event) {
