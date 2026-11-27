@@ -1,6 +1,6 @@
 public with sharing class OrderTriggerHandler {
     public static void updateOrderStatus(List<Order> newOrders,Map<Id, Order> oldOrderMap) {
-       List<Asset> newAssests=new List<Asset>();
+    
        Set<Id> accountIds=new Set<Id>();
        for(Order ord:newOrders){
            if(ord.Status=='Activated'){
@@ -64,6 +64,10 @@ public with sharing class OrderTriggerHandler {
         List<Asset> assetsToInsert = new List<Asset>();
 
         for (OrderItem item : orderItems) {
+            if (item.Product2.Family != 'Software') {
+                continue;
+            }
+
 
             Order ord = activatedOrders.get(item.OrderId);
 
@@ -100,7 +104,9 @@ public with sharing class OrderTriggerHandler {
                 newAsset.Source_Order__c = ord.Id;
 
                 assetsToInsert.add(newAsset);
+                 alreadyCreated++;
             }
+            existingCounts.put(key, alreadyCreated);
         }
 
         // 5. Insert all Assets together.
