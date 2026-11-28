@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Achievement Timeline</masterLabel>
+    <description>Displays consultant achievements grouped by year.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <objects>
+                <object>Consultant__c</object>
+                <object>Talent_Review__c</object>
+            </objects>
+            <property name="title" type="String" label="Title" default="Achievement Timeline"/>
+            <property name="headerFieldSet" type="String" label="Header Field Set" datasource="apex://AchievementFieldSetPicklist" default="Achievement_Header_Fields"/>
+            <property name="scoreFieldSet" type="String" label="Score Field Set" datasource="apex://AchievementFieldSetPicklist" default="Achievement_Score_Fields"/>
+            <property name="detailFieldSet" type="String" label="Detail Field Set" datasource="apex://AchievementFieldSetPicklist" default="Achievement_Detail_Fields"/>
+            <property name="sortOrder" type="String" label="Sort Order" datasource="Newest,Oldest" default="Newest"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

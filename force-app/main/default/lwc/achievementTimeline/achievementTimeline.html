@@ -1,0 +1,66 @@
+
+<template>
+    <lightning-card title={title}>
+        <lightning-button-icon slot="actions" icon-name="utility:refresh" alternative-text="Refresh" title="Refresh" onclick={handleRefresh}></lightning-button-icon>
+
+        <div class="slds-p-around_medium">
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Loading achievements" size="medium"></lightning-spinner>
+            </template>
+
+            <template lwc:elseif={error}>
+                <p class="slds-text-color_error">{errorMessage}</p>
+            </template>
+
+            <template lwc:elseif={groups.length}>
+                <lightning-accordion active-section-name={activeSectionName}>
+                    <template for:each={groups} for:item="group">
+                        <lightning-accordion-section key={group.year} name={group.sectionName} label={group.label}>
+                            <template for:each={group.achievements} for:item="achievement">
+                                <article key={achievement.id} class="achievement-card slds-m-bottom_medium">
+                                <div class="section-title">Header</div>
+                                    <div class="achievement-header">
+                                         
+                                        <template for:each={achievement.headerFields} for:item="field">
+                                            <div key={field.apiName} class="header-field">
+                                                <template lwc:if={field.isName}>
+                                                    <a href={achievement.recordUrl}>{field.value}</a>
+                                                </template>
+                                                <template lwc:else>
+                                                    <strong>{field.label}: </strong>{field.value}
+                                                </template>
+                                            </div>
+                                        </template>
+                                    </div>
+
+                                    <div class="section-title">Scores</div>
+                                    <div class="scores-grid">
+                                        <template for:each={achievement.scoreFields} for:item="field">
+                                            <div key={field.apiName} class="field">
+                                                <div class="field-label">{field.label}</div>
+                                                <div>{field.value}</div>
+                                            </div>
+                                        </template>
+                                    </div>
+
+                                    <div class="section-title">Details</div>
+                                    <template for:each={achievement.detailFields} for:item="field">
+                                        <div key={field.apiName} class="detail-field">
+                                            <div class="field-label">{field.label}</div>
+                                            <div>{field.value}</div>
+                                        </div>
+                                    </template>
+
+                                </article>
+                            </template>
+                        </lightning-accordion-section>
+                    </template>
+                </lightning-accordion>
+            </template>
+
+            <template lwc:else>
+                <p>No achievements have been added for this consultant yet.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
