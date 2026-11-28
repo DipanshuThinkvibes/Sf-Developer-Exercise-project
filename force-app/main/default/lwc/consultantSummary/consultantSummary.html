@@ -1,0 +1,36 @@
+
+<template>
+    <lightning-card title={cardTitle}>
+        <div class="slds-p-around_medium">
+
+            <template lwc:if={isLoading}>
+                <lightning-spinner
+                    alternative-text="Loading consultant summary"
+                    size="medium">
+                </lightning-spinner>
+            </template>
+
+            <template lwc:elseif={error}>
+                <div class="slds-text-color_error">
+                    Unable to load consultant summary.
+                </div>
+            </template>
+
+            <template lwc:elseif={fields.length}>
+                <div class="summary-grid">
+                    <template for:each={fields} for:item="field">
+                        <div key={field.label} class={field.columnClass}>
+                            <div class="field-label">{field.label}</div>
+                            <div class="field-value">{field.value}</div>
+                        </div>
+                    </template>
+                </div>
+            </template>
+
+            <template lwc:else>
+                <p>No consultant summary fields found.</p>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>
