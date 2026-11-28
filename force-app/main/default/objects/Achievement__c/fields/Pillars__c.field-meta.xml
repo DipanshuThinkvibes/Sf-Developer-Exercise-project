@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pillars__c</fullName>
+    <externalId>false</externalId>
+    <label>Pillars</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Technical Skill</fullName>
+                <default>false</default>
+                <label>Technical Skill</label>
+            </value>
+            <value>
+                <fullName>Communication</fullName>
+                <default>false</default>
+                <label>Communication</label>
+            </value>
+            <value>
+                <fullName>Teamwork</fullName>
+                <default>false</default>
+                <label>Teamwork</label>
+            </value>
+            <value>
+                <fullName>Client Impact</fullName>
+                <default>false</default>
+                <label>Client Impact</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>
